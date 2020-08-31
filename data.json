@@ -1,0 +1,14 @@
+{
+    "instructors": [
+
+        {
+            "id": 2,
+            "avatar_url": "http://google.com",
+            "name": "Eder Daniel Domingues",
+            "birth": -203472000000,
+            "services": "Developer",
+            "gender": "M",
+            "created_at": 1598662116809
+        }
+    ]
+}
