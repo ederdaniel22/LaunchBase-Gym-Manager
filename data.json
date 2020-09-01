@@ -1,14 +1,58 @@
 {
-    "instructors": [
-
-        {
-            "id": 2,
-            "avatar_url": "http://google.com",
-            "name": "Eder Daniel Domingues",
-            "birth": -203472000000,
-            "services": "Developer",
-            "gender": "M",
-            "created_at": 1598662116809
-        }
-    ]
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "http://google.com",
+      "name": "Eder Daniel Domingues",
+      "birth": -203472000000,
+      "services": "Musculação, crossfit, natação",
+      "gender": "M",
+      "created_at": 1598662116809
+    },
+    {
+      "id": 2,
+      "avatar_url": "http://google.com",
+      "name": "Evelise Dambros",
+      "birth": 287884800000,
+      "services": "Arquiteta, Corretora, Designer",
+      "gender": "F",
+      "created_at": 1598905039787
+    },
+    {
+      "id": 3,
+      "avatar_url": "http://google.com",
+      "name": "Diego Fernandes",
+      "birth": 855964800000,
+      "services": "Developer, CTO, CEO",
+      "gender": "M",
+      "created_at": 1598905086874
+    },
+    {
+      "id": 4,
+      "avatar_url": "http://google.com",
+      "name": "Mayk Brito",
+      "birth": 462240000000,
+      "services": "Crossfit, Musculação, BodyJump",
+      "gender": "M",
+      "created_at": 1598988447571
+    },
+    {
+      "id": 5,
+      "avatar_url": "http://google.com",
+      "name": "Erick Wendel",
+      "birth": 502243200000,
+      "services": "Crossfit, Musculação, BodyJump",
+      "gender": "M",
+      "created_at": 1598988578102
+    },
+    {
+      "id": 6,
+      "avatar_url": "http://google.com",
+      "name": "Gustavo Guanabara",
+      "birth": 528508800000,
+      "services": "Crossfit, Musculação, BodyJump",
+      "gender": "M",
+      "created_at": 1598988622191
+    }
+  ]
 }
