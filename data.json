@@ -53,6 +53,15 @@
       "services": "Crossfit, Musculação, BodyJump",
       "gender": "M",
       "created_at": 1598988622191
+    },
+    {
+      "id": 7,
+      "avatar_url": "http://google.com",
+      "name": "João José",
+      "birth": 287884800000,
+      "services": "Crossfit, Musculação, Natação",
+      "gender": "M",
+      "created_at": 1599007343677
     }
   ]
 }
