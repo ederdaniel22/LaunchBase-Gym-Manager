@@ -60,7 +60,7 @@
         const { id } = req.params
 
         const foundInstructor = data.instructors.find(function(instructor) {
-            return instructor.id === id
+            return instructor.id == id
         })
         if (!foundInstructor) return res.send("Instructor not found!")
 
