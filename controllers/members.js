@@ -1,6 +1,6 @@
     const fs = require('fs')
     const data = require('../data.json')
-    const { age, date } = require('../utils')
+    const { date } = require('../utils')
 
     exports.index = function(req, res) {
         return res.render("members/index", { members: data.members })
@@ -41,34 +41,32 @@
 
     exports.show = function(req, res) {
         const { id } = req.params
-        const foundMember = data.members.find(function(member) {
-            return member.id == id
+        const foundMember = data.members.find((member) => {
+            return id == member.id
         })
         if (!foundMember) return res.send("Member not found!")
 
         const member = {
             ...foundMember,
-            age: age(foundMember.birth),
+            birth: date(foundMember.birth).birthDay
         }
 
         return res.render("members/show", { member })
     }
 
     exports.edit = function(req, res) {
-        //req.params.id = /
         const { id } = req.params
+
         const foundMember = data.members.find(function(member) {
-            return member.id == id
+            return id == member.id
         })
 
         if (!foundMember) return res.send("Member not found!")
 
         const member = {
             ...foundMember,
-            birth: 'date(foundMember.birth)'
+            birth: date(foundMember.birth).iso
         }
-
-        //date(foundMember.birth)
 
         return res.render('members/edit', { member })
     }

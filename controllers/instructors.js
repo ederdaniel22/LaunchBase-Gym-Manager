@@ -6,10 +6,10 @@
         return res.render("instructors/index", { instructors: data.instructors })
     }
 
-
     exports.create = function(req, res) {
         return res.render('instructors/create')
     }
+
     exports.post = function(req, res) {
         const keys = Object.keys(req.body)
         for (key of keys) {
@@ -59,8 +59,8 @@
     exports.edit = function(req, res) {
         const { id } = req.params
 
-        const foundInstructor = data.instructors.find(function(instructor) {
-            return instructor.id == id
+        const foundInstructor = data.instructors.find((instructor) => {
+            return id == instructor.id
         })
         if (!foundInstructor) return res.send("Instructor not found!")
 
@@ -70,6 +70,7 @@
         }
         return res.render('instructors/edit', { instructor })
     }
+
     exports.put = function(req, res) {
         const { id } = req.body
 
@@ -96,6 +97,7 @@
             return res.redirect(`/instructors/${id}`)
         })
     }
+
     exports.delete = function(req, res) {
         const { id } = req.body
         const filteredInstructors = data.instructors.filter(function(instructor) {
