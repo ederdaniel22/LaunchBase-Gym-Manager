@@ -2,6 +2,18 @@
     "name": "Gym_Manager",
     "version": "1.0.0",
     "main": "server.js",
+
+    "files.associations": {
+        "*.html": "njk"
+    },
+
+    "emmet.includeLanguages": {
+        "njk": "html"
+    },
+
+    "material-icon-theme.files.associations": {
+        "*html": "nunjucks"
+    },
     "scripts": {
         "start": "npm-run-all -p nodemon browsersync",
         "nodemon": "nodemon server.js",

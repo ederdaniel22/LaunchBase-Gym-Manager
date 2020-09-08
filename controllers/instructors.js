@@ -6,32 +6,13 @@
         return res.render("instructors/index", { instructors: data.instructors })
     }
 
-    exports.show = function(req, res) {
-        //req.params.id = /
-        const { id } = req.params
-        const foundInstructor = data.instructors.find(function(instructor) {
-            return instructor.id == id
-        })
-        if (!foundInstructor) return res.send("Instructor not found!")
 
-        const instructor = {
-            ...foundInstructor,
-            age: age(foundInstructor.birth),
-            services: foundInstructor.services.split(","),
-            created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
-        }
-
-        return res.render("instructors/show", { instructor })
-    }
     exports.create = function(req, res) {
         return res.render('instructors/create')
     }
     exports.post = function(req, res) {
-
         const keys = Object.keys(req.body)
-
         for (key of keys) {
-
             if (req.body[key] == "") {
                 return res.send('Please, fill all fields')
             }
@@ -59,8 +40,7 @@
         })
     }
 
-    exports.edit = function(req, res) {
-        //req.params.id = /
+    exports.show = function(req, res) {
         const { id } = req.params
         const foundInstructor = data.instructors.find(function(instructor) {
             return instructor.id == id
@@ -69,11 +49,25 @@
 
         const instructor = {
             ...foundInstructor,
-            birth: 'date(foundInstructor.birth)'
+            age: age(foundInstructor.birth),
+            services: foundInstructor.services.split(","),
+            created_at: new Intl.DateTimeFormat("pt-BR").format(foundInstructor.created_at),
         }
+        return res.render("instructors/show", { instructor })
+    }
 
-        //date(foundInstructor.birth)
+    exports.edit = function(req, res) {
+        const { id } = req.params
 
+        const foundInstructor = data.instructors.find(function(instructor) {
+            return instructor.id === id
+        })
+        if (!foundInstructor) return res.send("Instructor not found!")
+
+        const instructor = {
+            ...foundInstructor,
+            birth: date(foundInstructor.birth).iso
+        }
         return res.render('instructors/edit', { instructor })
     }
     exports.put = function(req, res) {
